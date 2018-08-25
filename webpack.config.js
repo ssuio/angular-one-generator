@@ -3,13 +3,12 @@ const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-var extractPlugin = new ExtractTextPlugin({
-    filename: 'bundle.css' // scss轉css後另存的目標檔名
+const extractPlugin = new ExtractTextPlugin({
+    filename: 'bundle.css'
  });
  
 module.exports = {
-    entry: ['./public/js/index'],
+    entry: ['babel-polyfill', './public/js/index'],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -45,13 +44,17 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015']
+                        presets: ['@babel/preset-env']
                     }
                 }]
             }
         ]
     },
+    node: {
+        fs: 'empty'
+      }
 }

@@ -7,7 +7,8 @@
   "author": "Noah Chou",
   "license": "MIT",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "build": "webpack && npm start"
   },
   "dependencies": {
     "angular": "^1.7.3",
@@ -16,8 +17,11 @@
     "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.0.0-rc.3",
+    "@babel/preset-env": "^7.0.0-rc.3",
+    "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
