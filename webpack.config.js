@@ -5,10 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractPlugin = new ExtractTextPlugin({
     filename: 'bundle.css'
- });
- 
+});
+
 module.exports = {
-    entry: ['babel-polyfill', './public/js/index'],
+    entry: [
+        'babel-polyfill', 
+        './public/js/vendor.js', 
+        './public/js/main.js'],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -48,6 +51,7 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
+                        // presets: ['@babel/preset-env']
                         presets: ['@babel/preset-env']
                     }
                 }]
@@ -56,5 +60,5 @@ module.exports = {
     },
     node: {
         fs: 'empty'
-      }
+    }
 }

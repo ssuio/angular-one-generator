@@ -7,5 +7,6 @@ require('../css/base.scss')
 
 angular.module(Core.moduleName, []);
 require('./controller/root-ctrl');
+require('./controller/utils');
 
-angular = undefined;
+// angular = undefined;

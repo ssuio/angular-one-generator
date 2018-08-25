@@ -23,6 +23,7 @@
                 $scope.$apply();
                 console.log("end");
             }
+            
 
             function timeout(sec) {
                 return new Promise(resolve => $timeout(resolve, sec * 1000));
