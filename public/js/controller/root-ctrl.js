@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module(Core.moduleName)
+        .module('myApp')
         .controller('rootCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
             $scope.title = 'Angular';
 

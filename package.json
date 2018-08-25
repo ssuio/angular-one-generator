@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./app.js",
-    "build": "webpack && npm start"
+    "build": "webpack && npm start",
+    "build:module": "webpack --env.NODE_ENV=module"
   },
   "dependencies": {
     "angular": "^1.7.3",
